@@ -5,10 +5,20 @@ import React, { useState } from 'react';
 function App() {
     const [Text, setText] = useState('');
 
+    const [ToDos, setToDos] = useState([]);
+
     function handleText(event) {
         let text = event.target.value;
 
         setText(text);
+    }
+
+    function handleClick(event) {
+        event.preventDefault();
+        if (Text) {
+            setToDos([...ToDos, Text]);
+            setText('');
+        }
     }
 
     return (
@@ -21,9 +31,12 @@ function App() {
                         onChange={handleText}
                         type="text"
                         placeholder="Nova tarefa"
+                        value={Text}
                     />
 
-                    <button type="submit">Adicionar</button>
+                    <button onClick={handleClick} type="submit">
+                        Adicionar
+                    </button>
                 </form>
 
                 <div className="list-container">

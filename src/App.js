@@ -5,9 +5,25 @@ import React, { useState } from 'react';
 import List from './components/List';
 
 function App() {
-    const [Text, setText] = useState('');
-
     const [ToDos, setToDos] = useState([]);
+
+    function addToDo(toDo) {
+        setToDos([...ToDos, toDo]);
+    }
+
+    return (
+        <div className="App">
+            <Form onClick={addToDo}></Form>
+
+            <div className="list-container">
+                <List ToDos={ToDos}></List>
+            </div>
+        </div>
+    );
+}
+
+function Form(props) {
+    const [Text, setText] = useState('');
 
     function handleText(event) {
         let text = event.target.value;
@@ -18,33 +34,27 @@ function App() {
     function handleClick(event) {
         event.preventDefault();
         if (Text) {
-            setToDos([...ToDos, Text]);
+            props.onClick(Text);
             setText('');
         }
     }
 
     return (
-        <div className="App">
-            <div className="toDo-container">
-                <h1>To Do List</h1>
+        <div className="toDo-container">
+            <h1>To Do List</h1>
 
-                <form>
-                    <input
-                        onChange={handleText}
-                        type="text"
-                        placeholder="Nova tarefa"
-                        value={Text}
-                    />
+            <form>
+                <input
+                    onChange={handleText}
+                    type="text"
+                    placeholder="Nova tarefa"
+                    value={Text}
+                />
 
-                    <button onClick={handleClick} type="submit">
-                        Adicionar
-                    </button>
-                </form>
-
-                <div className="list-container">
-                    <List ToDos={ToDos}></List>
-                </div>
-            </div>
+                <button onClick={handleClick} type="submit">
+                    Adicionar
+                </button>
+            </form>
         </div>
     );
 }

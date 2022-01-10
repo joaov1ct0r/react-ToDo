@@ -41,7 +41,9 @@ function App() {
 
                 <div className="list-container">
                     <ul>
-                        <li>Item</li>
+                        {ToDos.map((toDo, key) => {
+                            return <li key={key}>{toDo}</li>;
+                        })}
                     </ul>
                 </div>
             </div>

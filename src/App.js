@@ -40,14 +40,20 @@ function App() {
                 </form>
 
                 <div className="list-container">
-                    <ul>
-                        {ToDos.map((toDo, key) => {
-                            return <li key={key}>{toDo}</li>;
-                        })}
-                    </ul>
+                    <List ToDos={ToDos}></List>
                 </div>
             </div>
         </div>
+    );
+}
+
+function List(props) {
+    return (
+        <ul>
+            {props.ToDos.map((toDo, key) => {
+                return <li key={key}>{toDo}</li>;
+            })}
+        </ul>
     );
 }
 

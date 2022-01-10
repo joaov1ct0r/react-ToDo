@@ -11,6 +11,12 @@ function App() {
 
                     <button type="submit">Adicionar</button>
                 </form>
+
+                <div className="list-container">
+                    <ul>
+                        <li>Item</li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

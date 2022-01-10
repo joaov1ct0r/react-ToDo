@@ -2,6 +2,8 @@ import './App.css';
 
 import React, { useState } from 'react';
 
+import List from './components/List';
+
 function App() {
     const [Text, setText] = useState('');
 
@@ -44,16 +46,6 @@ function App() {
                 </div>
             </div>
         </div>
-    );
-}
-
-function List(props) {
-    return (
-        <ul>
-            {props.ToDos.map((toDo, key) => {
-                return <li key={key}>{toDo}</li>;
-            })}
-        </ul>
     );
 }
 

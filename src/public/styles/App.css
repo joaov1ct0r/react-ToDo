@@ -18,6 +18,7 @@ body {
     text-align: center;
     background-color: slategrey;
     border-radius: 5px;
+    overflow-y: scroll;
 }
 
 .form-container h1 {
@@ -41,9 +42,41 @@ body {
     background-color: black;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .form-container button:hover {
+    background-color: rgb(142, 161, 181);
+    color: white;
+    transition: 0.5s;
+}
+
+.list-container ul {
+    list-style: none;
+    padding-top: 5%;
+}
+
+.list-container li {
+    display: inline-block;
+    text-align: left;
+    color: white;
+    border-bottom: 2px solid rgb(138, 159, 181);
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+.list-container button {
+    height: 25px;
+    padding: 2px;
+    float: right;
+    margin-left: 2%;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list-container button:hover {
     background-color: rgb(142, 161, 181);
     color: white;
     transition: 0.5s;

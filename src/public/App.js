@@ -1,10 +1,10 @@
-import './App.css';
+import './public/App.css';
 
 import React, { useState } from 'react';
 
-import List from './components/List';
+import List from './public/components/List';
 
-import Form from './components/Form';
+import Form from './public/components/Form';
 
 function App() {
     const [ToDos, setToDos] = useState([]);

@@ -5,7 +5,11 @@ function List(props) {
         <div className="list-container">
             <ul>
                 {props.ToDos.map((toDo, key) => {
-                    return <li key={key}>{toDo}</li>;
+                    return (
+                        <li key={key}>
+                            {toDo} <button>Delete</button>
+                        </li>
+                    );
                 })}
             </ul>
         </div>

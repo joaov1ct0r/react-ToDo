@@ -7,7 +7,8 @@ function List(props) {
                 {props.ToDos.map((toDo, key) => {
                     return (
                         <li key={key}>
-                            {toDo} <button>Delete</button>
+                            {toDo} <button>Deletar</button>
+                            <button>Editar</button>
                         </li>
                     );
                 })}

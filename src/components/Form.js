@@ -18,7 +18,7 @@ function Form(props) {
     }
 
     return (
-        <div className="toDo-container">
+        <div className="form-container">
             <h1>To Do List</h1>
 
             <form>

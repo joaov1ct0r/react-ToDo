@@ -17,9 +17,7 @@ function App() {
         <div className="App">
             <Form onClick={addToDo}></Form>
 
-            <div className="list-container">
-                <List ToDos={ToDos}></List>
-            </div>
+            <List ToDos={ToDos}></List>
         </div>
     );
 }

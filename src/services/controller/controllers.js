@@ -4,7 +4,7 @@ let router = express.Router();
 
 const bodyParser = require('body-parser');
 
-const db = require('../database/db.js');
+const db = require('../model/db.js');
 
 router.get('/all', bodyParser.json(), (req, res) => {
     res.send(JSON.stringify(toDos));

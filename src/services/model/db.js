@@ -42,8 +42,20 @@ let changeToDo = (index, title, callback) => {
     });
 };
 
+let deleteToDo = (index, callback) => {
+    let SQL = `DELETE FROM toDos WHERE id = ?`;
+
+    db.query(SQL, query, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        callback(result);
+    });
+};
+
 module.exports = {
     allToDo,
     newToDo,
-    changeToDo
+    changeToDo,
+    deleteToDo
 };

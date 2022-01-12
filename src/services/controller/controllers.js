@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const db = require('../model/db.js');
 
 router.get('/all', bodyParser.json(), (req, res) => {
-    let request = db.allToDo(function (result) {
+    db.allToDo(function (result) {
         res.send(JSON.stringify(result));
     });
 });
@@ -15,7 +15,7 @@ router.get('/all', bodyParser.json(), (req, res) => {
 router.post('/new', bodyParser.json(), (req, res) => {
     let { title } = req.body;
 
-    let request = db.newToDo(title, function (result) {
+    db.newToDo(title, function (result) {
         console.log(result);
 
         res.send('Tarefa adicionada com sucesso');
@@ -27,7 +27,7 @@ router.put('/edit/:index', bodyParser.json(), (req, res) => {
 
     let { title } = req.body;
 
-    let request = db.changeToDo(index, title, function (result) {
+    db.changeToDo(index, title, function (result) {
         console.log(result);
 
         res.send('Tarefa alterada com sucesso');
@@ -37,7 +37,7 @@ router.put('/edit/:index', bodyParser.json(), (req, res) => {
 router.delete('/delete/:index', bodyParser.json(), (req, res) => {
     let { index } = req.params;
 
-    let request = db.deleteToDo(index, function (result) {
+    db.deleteToDo(index, function (result) {
         console.log(result);
 
         res.send('Tarefa deletada com sucesso');

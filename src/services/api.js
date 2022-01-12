@@ -1,7 +1,5 @@
 const express = require('express');
 
-const bodyParser = require('body-parser');
-
 const routes = require('../services/controller/controllers');
 
 const app = express();

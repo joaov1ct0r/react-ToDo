@@ -44,5 +44,6 @@ let changeToDo = (index, title, callback) => {
 
 module.exports = {
     allToDo,
-    newToDo
+    newToDo,
+    changeToDo
 };

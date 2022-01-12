@@ -27,9 +27,11 @@ router.put('/edit/:index', bodyParser.json(), (req, res) => {
 
     let { title } = req.body;
 
-    toDos[index].title = title;
+    let request = db.changeToDo(index, title, function (result) {
+        console.log(result);
 
-    res.send('Tarefa alterada com sucesso');
+        res.send('Tarefa alterada com sucesso');
+    });
 });
 
 router.delete('/delete/:index', bodyParser.json(), (req, res) => {

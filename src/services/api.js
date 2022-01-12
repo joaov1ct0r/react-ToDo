@@ -30,6 +30,14 @@ app.put('/edit/:index', bodyParser.json(), (req, res) => {
     res.send('Tarefa alterada com sucesso');
 });
 
+app.delete('/delete/:index', bodyParser.json(), (req, res) => {
+    let { index } = req.params;
+
+    delete toDos[index];
+
+    res.send('Tarefa deletada com sucesso');
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
 });

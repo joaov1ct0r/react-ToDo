@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 
 const db = require('../model/db.js');
 
+const cors = require('cors');
+
+router.use(cors());
+
 router.get('/all', bodyParser.json(), (req, res) => {
     db.allToDo(function (result) {
         res.send(JSON.stringify(result));

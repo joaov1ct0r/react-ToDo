@@ -4,10 +4,10 @@ function List(props) {
     return (
         <div className="list-container">
             <ul>
-                {props.ToDos.map((toDo, key) => {
+                {props.ToDos.map(Tarefa => {
                     return (
-                        <li key={key}>
-                            {toDo} <button>Deletar</button>
+                        <li key={Tarefa.id}>
+                            {Tarefa.toDo} <button>Deletar</button>
                             <button>Editar</button>
                         </li>
                     );

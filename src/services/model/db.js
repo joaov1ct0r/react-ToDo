@@ -17,3 +17,7 @@ let allToDo = callback => {
         callback(result);
     });
 };
+
+module.exports = {
+    allToDo
+};

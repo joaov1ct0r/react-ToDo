@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 const db = require('../model/db.js');
 
 router.get('/all', bodyParser.json(), (req, res) => {
-    res.send(JSON.stringify(toDos));
+    let request = db.allToDo(function (result) {
+        res.send(JSON.stringify(result));
+    });
 });
 
 router.post('/new', bodyParser.json(), (req, res) => {

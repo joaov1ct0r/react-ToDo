@@ -9,7 +9,7 @@ const PORT = 3001;
 let toDos = {};
 
 app.get('/all', bodyParser.json(), (req, res) => {
-    res.send(toDos);
+    res.send(JSON.stringify(toDos));
 });
 
 app.listen(PORT, () => {

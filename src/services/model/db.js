@@ -45,7 +45,7 @@ let changeToDo = (index, title, callback) => {
 let deleteToDo = (index, callback) => {
     let SQL = `DELETE FROM toDos WHERE id = ?`;
 
-    db.query(SQL, query, (err, result) => {
+    db.query(SQL, index, (err, result) => {
         if (err) {
             throw err;
         }

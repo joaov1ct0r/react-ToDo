@@ -37,9 +37,11 @@ router.put('/edit/:index', bodyParser.json(), (req, res) => {
 router.delete('/delete/:index', bodyParser.json(), (req, res) => {
     let { index } = req.params;
 
-    delete toDos[index];
+    let request = db.deleteToDo(index, function (result) {
+        console.log(result);
 
-    res.send('Tarefa deletada com sucesso');
+        res.send('Tarefa deletada com sucesso');
+    });
 });
 
 module.exports = router;

@@ -18,6 +18,17 @@ let allToDo = callback => {
     });
 };
 
+let newToDo = (title, callback) => {
+    let SQL = `INSERT INTO toDos (toDo) VALUES (?)`;
+
+    db.query(SQL, title, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        callback(result);
+    });
+};
+
 module.exports = {
     allToDo
 };

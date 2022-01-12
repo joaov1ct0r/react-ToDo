@@ -15,9 +15,11 @@ router.get('/all', bodyParser.json(), (req, res) => {
 router.post('/new', bodyParser.json(), (req, res) => {
     let { title } = req.body;
 
-    toDos.push({ title });
+    let request = db.newToDo(title, function (result) {
+        console.log(result);
 
-    res.send('Tarefa adicionada com sucesso');
+        res.send('Tarefa adicionada com sucesso');
+    });
 });
 
 router.put('/edit/:index', bodyParser.json(), (req, res) => {

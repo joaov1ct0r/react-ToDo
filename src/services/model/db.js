@@ -29,6 +29,19 @@ let newToDo = (title, callback) => {
     });
 };
 
+let changeToDo = (index, title, callback) => {
+    let SQL = `UPDATE toDos SET toDo = ? WHERE id = ?`;
+
+    let params = [title, index];
+
+    db.query(SQL, params, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        callback(result);
+    });
+};
+
 module.exports = {
     allToDo,
     newToDo

@@ -6,13 +6,15 @@ import List from './components/List';
 
 import Form from './components/Form';
 
-import item from './components/Tarefa';
+import Item from './components/Tarefa';
 
 function App() {
     const [ToDos, setToDos] = useState([]);
 
     function addToDo(toDo) {
-        setToDos([...ToDos, toDo]);
+        let item = new Item(toDo);
+
+        setToDos([...ToDos, item]);
     }
 
     console.log(ToDos);

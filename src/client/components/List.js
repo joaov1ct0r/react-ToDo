@@ -26,7 +26,7 @@ function List(props) {
                 {props.ToDos.map(Tarefa => {
                     return (
                         <li id={Tarefa.id} key={Tarefa.id}>
-                            {Tarefa.toDo}{' '}
+                            {Tarefa.text}
                             <button onClick={handleButton}>Deletar</button>
                             <button>Editar</button>
                         </li>

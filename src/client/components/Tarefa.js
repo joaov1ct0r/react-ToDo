@@ -1,6 +1,6 @@
-function item(text) {
+function Item(text) {
     this.id = generateId();
-    this.id = this.text = text;
+    this.text = text;
     this.done = false;
 
     function generateId() {
@@ -8,4 +8,4 @@ function item(text) {
     }
 }
 
-export default item;
+export default Item;

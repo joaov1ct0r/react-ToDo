@@ -5,7 +5,6 @@ let generateId = () => {
 function Item(text) {
     this.id = generateId();
     this.text = text;
-    this.done = false;
 }
 
 export default Item;

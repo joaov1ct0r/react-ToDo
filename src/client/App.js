@@ -7,9 +7,20 @@ import List from './components/List';
 import Form from './components/Form';
 
 import Item from './components/Tarefa';
+import { useEffect } from 'react/cjs/react.development';
+
+const SAVED_ITEMS = 'savedItems';
 
 function App() {
     const [ToDos, setToDos] = useState([]);
+
+    useEffect(() => {
+        let savedToDos = JSON.parse(localStorage.getItem(SAVED_ITEMS));
+
+        if (savedToDos) {
+            setToDos(savedToDos);
+        }
+    }, []);
 
     function addToDo(toDo) {
         let item = new Item(toDo);

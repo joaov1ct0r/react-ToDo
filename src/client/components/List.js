@@ -1,23 +1,19 @@
 import React from 'react';
 
+import ListItem from './ListItem';
+
 function List(props) {
     return (
         <div className="list-container">
             <ul>
-                {props.ToDos.map(Tarefa => {
-                    return (
-                        <li id={Tarefa.id} key={Tarefa.id}>
-                            {Tarefa.text}
-                            <button
-                                onClick={() => {
-                                    props.onDelete(Tarefa);
-                                }}
-                            >
-                                Deletar
-                            </button>
-                        </li>
-                    );
-                })}
+                {props.ToDos.map(Tarefa => (
+                    <ListItem
+                        id={Tarefa.id}
+                        key={Tarefa.id}
+                        Tarefa={Tarefa}
+                        onDelete={props.onDelete}
+                    ></ListItem>
+                ))}
             </ul>
         </div>
     );

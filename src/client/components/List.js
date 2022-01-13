@@ -15,7 +15,6 @@ function List(props) {
                             >
                                 Deletar
                             </button>
-                            <button>Editar</button>
                         </li>
                     );
                 })}

@@ -17,13 +17,16 @@ function App() {
         setToDos([...ToDos, item]);
     }
 
-    console.log(ToDos);
+    function deleteToDo(toDo) {
+        let filteredItems = ToDos.filter(toDos => toDos.id !== toDo.id);
 
+        setToDos(filteredItems);
+    }
     return (
         <div className="App">
             <Form onClick={addToDo}></Form>
 
-            <List ToDos={ToDos}></List>
+            <List onDelete={deleteToDo} ToDos={ToDos}></List>
         </div>
     );
 }

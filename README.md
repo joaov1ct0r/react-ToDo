@@ -1,5 +1,4 @@
-# Sistema de cadastro e Login de usuarios
-
+# React ToDo
 <h1>EM DESENVOLVIMENTO</h1>
 
 <h2>Requisitos</h2>
@@ -13,6 +12,9 @@
   <br>
   <li>React</li>
   <p><code>npx create-react-app react-todo</code></p>
+  <br>
+  <li>Dependencias</li>
+  <p><code>npm install</code></p>
   <br>
 </ul>
 

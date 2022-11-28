@@ -7,7 +7,8 @@ import List from './components/List';
 import Form from './components/Form';
 
 import Item from './components/Tarefa';
-import { useEffect } from 'react/cjs/react.development';
+
+import { useEffect } from 'react';
 
 const SAVED_TODOS = 'savedToDos';
 

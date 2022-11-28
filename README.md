@@ -1,5 +1,4 @@
-# Sistema de cadastro e Login de usuarios
-
+# React ToDo
 <h1>EM DESENVOLVIMENTO</h1>
 
 <h2>Requisitos</h2>
@@ -13,6 +12,9 @@
   <br>
   <li>React</li>
   <p><code>npx create-react-app react-todo</code></p>
+  <br>
+  <li>Dependencias</li>
+  <p><code>npm install</code></p>
   <br>
 </ul>
 
@@ -41,3 +43,5 @@
 <p>A PAGINA DA LISTA DE TAREFAS SERA ABERTA E ESTARA PRONTA PARA CRIAR, ARMAZENAR, EDITAR E EXCLUIR SUAS TAREFAS</p>
 
 <h2>Picture</h2>
+
+![reactTodO](https://user-images.githubusercontent.com/79015823/149587500-bf71a25c-1551-4789-a047-313d891034be.jpg)

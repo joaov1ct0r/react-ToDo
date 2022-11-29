@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": [
+      "es6",
+      "DOM",
+      "DOM.Iterable",
+    ],
+    "allowJs": true,
+    "outDir": "build",
+    "rootDir": "src",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/interfaces"
+    ]
+  },
+  "exclude": [
+    "./node_modules",
+    "./src/assets"
+  ],
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "src/index.tsx"  
+  ]
+}

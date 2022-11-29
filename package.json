@@ -1,7 +1,24 @@
 {
   "name": "react-todo",
-  "version": "0.1.0",
+  "author": "github.com/joaov1ct0r",
+  "version": "1.0.0",
+  "description": "Web App de Lista de Tarefas, feito em JavaScript utilizando a biblioteca ReactJS com TypeScript",
+  "main": "./build/index.jsx",
   "private": true,
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "typescript",
+    "jest",
+    "docker",
+    "docker-compose",
+    "javascript",
+    "prettier",
+    "axios",
+    "rimraf"
+  ],
   "dependencies": {
     "axios": "*",
     "react": "*",

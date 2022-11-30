@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Form onClick={addToDo}></Form>
 
-      <List onDelete={deleteToDo} ToDos={ToDos}></List>
+      <List></List>
     </div>
   );
 }

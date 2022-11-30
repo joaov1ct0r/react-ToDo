@@ -17,7 +17,8 @@
     "javascript",
     "prettier",
     "axios",
-    "rimraf"
+    "rimraf",
+    "eslint"
   ],
   "dependencies": {
     "axios": "*",

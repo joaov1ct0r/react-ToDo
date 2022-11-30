@@ -1,7 +1,7 @@
 import React from "react";
 import ToDo from "./ToDo";
 
-export default function List() {
+export default function List(): JSX.Element {
   return (
     <div className="list-container">
       <ul>

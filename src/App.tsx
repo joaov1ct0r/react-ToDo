@@ -3,7 +3,7 @@ import List from "./components/List";
 import Form from "./components/Form";
 import ToDo from "./components/ToDo";
 
-function App() {
+export default function App(): JSX.Element {
   const [ToDos, setToDos] = useState<ToDo[]>([]);
 
   useEffect(() => {
@@ -34,11 +34,9 @@ function App() {
   }
   return (
     <div className="App">
-      <Form onClick={addToDo}></Form>
+      <Form></Form>
 
       <List></List>
     </div>
   );
 }
-
-export default App;

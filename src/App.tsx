@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import List from "./components/List";
 import Form from "./components/Form";
-import ToDo from "./components/ToDo";
+import ToDo from "./helpers/ToDo";
 
 export default function App(): JSX.Element {
   const [ToDos, setToDos] = useState<ToDo[]>([]);

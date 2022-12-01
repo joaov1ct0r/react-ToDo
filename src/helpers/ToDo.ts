@@ -1,5 +1,5 @@
 import IToDo from "../interfaces/IToDo";
-import generateId from "../utils/generateId";
+import generateId from "./generateId";
 
 export default class ToDo implements IToDo {
   public readonly id: string;

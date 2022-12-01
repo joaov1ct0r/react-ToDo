@@ -1,5 +1,5 @@
 import React from "react";
-import ToDo from "./ToDo";
+import ToDo from "../helpers/ToDo";
 
 export default function List(): JSX.Element {
   return (

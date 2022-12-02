@@ -1,4 +1,5 @@
 # React ToDo
+
 <h1>EM DESENVOLVIMENTO</h1>
 
 <h2>Requisitos</h2>
@@ -32,7 +33,7 @@
 
 <h3>GIT</h3>
 
-<p>FAÇA O DOWNLOADS DO REPOSITORIO OU USE:<br><code>git clone git@github.com:joaov1ct0r/reactToDo.git</code></p>
+<p>FAÇA O DOWNLOADS DO REPOSITORIO OU USE SSH:<br><code>git clone git@github.com:joaov1ct0r/reactToDo.git</code></p>
 
 <h3>INICIE O SERVER</h3>
 

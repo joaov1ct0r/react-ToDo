@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 
 export default function Form(): JSX.Element {
   const [Text, setText] = useState<string | null>(null);
 
   function handleText(event: React.ChangeEvent<HTMLInputElement>): void {
-    const text = event.target.value;
+    const text: string = event.target.value;
 
     setText(text);
   }
 
-  function handleClick(event: React.ChangeEvent<HTMLInputElement>): void {
-    event.preventDefault();
+  function handleClick(
+    event: React.MouseEventHandler<HTMLButtonElement>
+  ): void {
+    // event.preventDefault();
     if (Text) {
       addToDo(Text);
       setText("");

@@ -21,16 +21,30 @@ export default function App(): JSX.Element {
     localStorage.setItem("savedToDos", JSON.stringify(ToDos));
   }, [ToDos]);
 
-  function addToDo(toDo: string) {
-    const newToDo = new ToDo(toDo);
+  function addToDo(toDo: string): void {
+    const newToDo: ToDo = new ToDo(toDo);
 
     setToDos([...ToDos, newToDo]);
   }
 
-  function deleteToDo(toDo: ToDo) {
-    const filteredItems = ToDos.filter((toDos) => toDos.id !== toDo.id);
+  function deleteToDo(toDo: ToDo): void {
+    const filteredItems: ToDo[] = ToDos.filter((toDos) => toDos.id !== toDo.id);
 
     setToDos(filteredItems);
+  }
+
+  function markToDo(toDo: ToDo): void {
+    const selectedToDo: ToDo | undefined = ToDos.find(
+      (todo) => todo.id === toDo.id
+    );
+
+    if (selectedToDo === undefined) return;
+
+    deleteToDo(toDo);
+
+    selectedToDo.done = !selectedToDo.done;
+
+    setToDos([...ToDos, selectedToDo]);
   }
   return (
     <div className="App">

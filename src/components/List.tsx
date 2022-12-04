@@ -10,7 +10,7 @@ export default function List(): JSX.Element {
             {" "}
             {Tarefa.text}
             <button onClick={() => deleteToDo(Tarefa)}>Deletar</button>{" "}
-            <button onClick={() => finishedToDo(Tarefa)}>Finalizado</button>
+            <button onClick={() => markToDo(Tarefa)}>Finalizar</button>
           </li>
         ))}
       </ul>

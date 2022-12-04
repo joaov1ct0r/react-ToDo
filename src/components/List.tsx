@@ -9,7 +9,8 @@ export default function List(): JSX.Element {
           <li id={Tarefa.id} key={Tarefa.id}>
             {" "}
             {Tarefa.text}
-            <button onClick={() => deleteToDo(Tarefa)}>Deletar</button>
+            <button onClick={() => deleteToDo(Tarefa)}>Deletar</button>{" "}
+            <button onClick={() => editToDo(Tarefa)}>Editar</button>
           </li>
         ))}
       </ul>

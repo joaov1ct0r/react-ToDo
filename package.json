@@ -21,6 +21,7 @@
     "eslint"
   ],
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "axios": "*",
     "react": "*",
     "react-dom": "*",

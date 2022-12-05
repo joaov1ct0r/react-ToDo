@@ -21,8 +21,8 @@ export default function App(): JSX.Element {
     localStorage.setItem("savedToDos", JSON.stringify(ToDos));
   }, [ToDos]);
 
-  function addToDo(toDo: string): void {
-    const newToDo: ToDo = new ToDo(toDo);
+  function addToDo(text: string): void {
+    const newToDo: ToDo = new ToDo(text);
 
     setToDos([...ToDos, newToDo]);
   }

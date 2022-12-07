@@ -1,7 +1,11 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToDo } from "../actions/toDoActions";
 
 export default function Form(): JSX.Element {
   const [Text, setText] = useState<string | null>(null);
+
+  const dispatch = useDispatch();
 
   function handleText(event: React.ChangeEvent<HTMLInputElement>): void {
     const text: string = event.target.value;
@@ -9,12 +13,9 @@ export default function Form(): JSX.Element {
     setText(text);
   }
 
-  function handleClick(
-    event: React.MouseEventHandler<HTMLButtonElement>
-  ): void {
-    // event.preventDefault();
+  function handleClick() {
     if (Text) {
-      addToDo(Text);
+      dispatch(addToDo(Text));
       setText("");
     }
   }
@@ -28,8 +29,7 @@ export default function Form(): JSX.Element {
           onChange={handleText}
           type="text"
           placeholder="Nova tarefa"
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          value={Text!}
+          value={Text || ""}
         />
 
         <button onClick={handleClick} type="submit">

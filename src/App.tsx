@@ -1,56 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import List from "./components/List";
 import Form from "./components/Form";
-import ToDo from "./helpers/ToDo";
+import { configureStore } from "@reduxjs/toolkit";
+import toDoReducer from "./reducers/ToDoReducer";
+import { Provider } from "react-redux";
 
 export default function App(): JSX.Element {
-  const [ToDos, setToDos] = useState<ToDo[]>([]);
+  const store = configureStore({
+    reducer: {
+      toDo: toDoReducer,
+    },
+  });
 
-  useEffect(() => {
-    const possibleItems: string | null = localStorage.getItem("savedToDos");
-
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const savedToDos = JSON.parse(possibleItems!);
-
-    if (savedToDos) {
-      setToDos(savedToDos);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("savedToDos", JSON.stringify(ToDos));
-  }, [ToDos]);
-
-  function addToDo(text: string): void {
-    const newToDo: ToDo = new ToDo(text);
-
-    setToDos([...ToDos, newToDo]);
-  }
-
-  function deleteToDo(toDo: ToDo): void {
-    const filteredItems: ToDo[] = ToDos.filter((toDos) => toDos.id !== toDo.id);
-
-    setToDos(filteredItems);
-  }
-
-  function markToDo(toDo: ToDo): void {
-    const selectedToDo: ToDo | undefined = ToDos.find(
-      (todo) => todo.id === toDo.id
-    );
-
-    if (selectedToDo === undefined) return;
-
-    deleteToDo(toDo);
-
-    selectedToDo.done = !selectedToDo.done;
-
-    setToDos([...ToDos, selectedToDo]);
-  }
   return (
     <div className="App">
-      <Form></Form>
+      <Provider store={store}>
+        <Form></Form>
 
-      <List></List>
+        <List></List>
+      </Provider>
     </div>
   );
 }

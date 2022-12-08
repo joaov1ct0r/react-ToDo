@@ -1,16 +1,18 @@
 import ToDo from "../../helpers/ToDo";
 import { addToDoType, deleteToDoType, markToDoType } from "./toDoActionsTypes";
+import IToDoAction from "../../interfaces/IToDoAction";
+import IToDo from "../../interfaces/IToDo";
 
-export function addToDo(text: string) {
+export function addToDo(text: string): IToDoAction {
   const toDo: ToDo = new ToDo(text);
 
   return { type: addToDoType, payload: toDo };
 }
 
-export function deleteToDo(id: string) {
-  return { type: deleteToDoType, payload: id };
+export function deleteToDo(task: IToDo): IToDoAction {
+  return { type: deleteToDoType, payload: task };
 }
 
-export function markToDo(id: string) {
-  return { type: markToDoType, payload: id };
+export function markToDo(task: IToDo): IToDoAction {
+  return { type: markToDoType, payload: task };
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import ToDo from "../helpers/ToDo";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteToDo, markToDo } from "../store/actions/toDoActions";
+import { deleteToDo, markToDo } from "../store/reducers/toDoSlicer";
 import IToDoState from "../interfaces/IToDoState";
 
 export default function List(): JSX.Element {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addToDo } from "../actions/toDoActions";
+import ToDo from "../helpers/ToDo";
+import { createToDo } from "../store/reducers/toDoSlicer";
 
 export default function Form(): JSX.Element {
   const [Text, setText] = useState<string | null>(null);
@@ -15,7 +16,10 @@ export default function Form(): JSX.Element {
 
   function handleClick() {
     if (Text) {
-      dispatch(addToDo(Text));
+      const toDo: ToDo = new ToDo(Text);
+
+      dispatch(createToDo(toDo));
+
       setText("");
     }
   }

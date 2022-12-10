@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import ToDo from "../helpers/ToDo";
 import { createToDo } from "../store/reducers/toDoSlicer";
 
 export default function Form(): JSX.Element {
@@ -16,9 +15,7 @@ export default function Form(): JSX.Element {
 
   function handleClick() {
     if (Text) {
-      const toDo: ToDo = new ToDo(Text);
-
-      dispatch(createToDo(toDo));
+      dispatch(createToDo(Text));
 
       setText("");
     }
@@ -33,6 +30,7 @@ export default function Form(): JSX.Element {
           onChange={handleText}
           type="text"
           placeholder="Nova tarefa"
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           value={Text || ""}
         />
 

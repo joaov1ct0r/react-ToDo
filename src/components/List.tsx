@@ -1,12 +1,12 @@
 import React from "react";
-import ToDo from "../helpers/ToDo";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteToDo, markToDo } from "../store/reducers/toDoSlicer";
-import IToDoState from "../interfaces/IToDoState";
+import IToDo from "../interfaces/IToDo";
+import ToDo from "../helpers/ToDo";
 
 export default function List(): JSX.Element {
-  const toDos: ToDo[] = useSelector((state: IToDoState) => {
-    return state.toDo;
+  const toDos: ToDo[] = useSelector((state: ToDo[]) => {
+    return state;
   });
 
   const dispatch = useDispatch();
@@ -14,18 +14,19 @@ export default function List(): JSX.Element {
   return (
     <div className="list-container">
       <ul>
-        {toDos.map((Tarefa: ToDo) => (
-          <li id={Tarefa.id} key={Tarefa.id}>
-            {" "}
-            {Tarefa.text}
-            <button onClick={() => dispatch(deleteToDo(Tarefa))}>
-              Deletar
-            </button>{" "}
-            <button onClick={() => dispatch(markToDo(Tarefa))}>
-              Finalizar
-            </button>
-          </li>
-        ))}
+        {toDos.map((task: IToDo) => {
+          return (
+            <li id={task.id} key={task.id}>
+              {task.text}{" "}
+              <button onClick={() => dispatch(deleteToDo(task))}>
+                Deletar
+              </button>{" "}
+              <button onClick={() => dispatch(markToDo(task))}>
+                Finalizar
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

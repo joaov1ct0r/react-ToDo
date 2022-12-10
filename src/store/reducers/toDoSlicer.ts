@@ -1,30 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import ToDo from "../../helpers/ToDo";
 import IToDo from "../../interfaces/IToDo";
-import IToDoAction from "../../interfaces/IToDoAction";
-import IToDoState from "../../interfaces/IToDoState";
 
 export const toDoSlice = createSlice({
   name: "toDo",
-  initialState: {
-    toDo: [],
-  },
+  initialState: [] as ToDo[],
   reducers: {
-    createToDo: (state: IToDoState, action: IToDoAction) => {
-      state.toDo.push(action.payload);
+    createToDo: {
+      reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
+        state.push(action.payload);
+      },
+
+      prepare: (text: string) => {
+        const toDo: ToDo = new ToDo(text);
+
+        return { payload: toDo };
+      },
     },
 
-    deleteToDo: (state: IToDoState, action: IToDoAction) => {
-      state.toDo.filter((task: IToDo) => task.id !== action.payload.id);
+    deleteToDo: {
+      reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
+        state.filter((task: IToDo) => task.id !== action.payload.id);
+      },
+
+      prepare: (task: ToDo) => {
+        return { payload: task };
+      },
     },
 
-    markToDo: (state: IToDoState, action) => {
-      state.toDo.map((task: IToDo) => {
-        if (task.id === action.payload.id) {
-          task.done = !task.done;
-        }
+    markToDo: {
+      reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
+        state.map((task: IToDo) => {
+          if (task.id === action.payload.id) {
+            task.done = !task.done;
+          }
 
-        return task;
-      });
+          return task;
+        });
+      },
+
+      prepare: (task: ToDo) => {
+        return { payload: task };
+      },
     },
   },
 });

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteToDo, markToDo } from "../store/reducers/toDoSlicer";
-import IToDo from "../interfaces/IToDo";
 import ToDo from "../helpers/ToDo";
 import { ReduxState, AppDispatch } from "../store";
 
@@ -15,7 +14,7 @@ export default function List(): JSX.Element {
   return (
     <div className="list-container">
       <ul>
-        {toDos.map((task: IToDo) => {
+        {toDos.map((task: ToDo) => {
           return (
             <li id={task.id} key={task.id}>
               {task.text}{" "}

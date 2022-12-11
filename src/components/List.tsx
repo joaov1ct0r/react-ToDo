@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteToDo, markToDo } from "../store/reducers/toDoSlicer";
 import IToDo from "../interfaces/IToDo";
 import ToDo from "../helpers/ToDo";
+import { ReduxState } from "../store";
 
 export default function List(): JSX.Element {
-  const toDos: ToDo[] = useSelector((state: ToDo[]) => {
+  const toDos: ToDo[] = useSelector((state: ReduxState) => {
     return state;
   });
 

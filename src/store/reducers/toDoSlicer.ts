@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import ToDo from "../../helpers/ToDo";
-import IToDo from "../../interfaces/IToDo";
 
 export const toDoSlice = createSlice({
   name: "toDo",
@@ -20,7 +19,7 @@ export const toDoSlice = createSlice({
 
     deleteToDo: {
       reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
-        state.filter((task: IToDo) => task.id !== action.payload.id);
+        state.splice(Number(action.payload.id), 1);
       },
 
       prepare: (task: ToDo) => {
@@ -30,7 +29,7 @@ export const toDoSlice = createSlice({
 
     markToDo: {
       reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
-        state.map((task: IToDo) => {
+        state.map((task: ToDo) => {
           if (task.id === action.payload.id) {
             task.done = !task.done;
           }

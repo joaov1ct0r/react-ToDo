@@ -13,8 +13,10 @@ export default function Form(): JSX.Element {
     setText(text);
   }
 
-  function handleClick() {
+  function handleClick(e: React.MouseEvent) {
     if (Text) {
+      e.preventDefault();
+
       dispatch(createToDo(Text));
 
       setText("");

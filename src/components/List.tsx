@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteToDo, markToDo } from "../store/reducers/toDoSlicer";
 import IToDo from "../interfaces/IToDo";
 import ToDo from "../helpers/ToDo";
-import { ReduxState } from "../store";
+import { ReduxState, AppDispatch } from "../store";
 
 export default function List(): JSX.Element {
   const toDos: ToDo[] = useSelector((state: ReduxState) => {
     return state;
   });
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   return (
     <div className="list-container">

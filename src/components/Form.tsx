@@ -26,7 +26,15 @@ export default function Form(): JSX.Element {
 
   return (
     <div className="form-container">
-      <h1>To Do List</h1>
+      <h1
+        style={{
+          paddingTop: "5%",
+          marginBottom: "5%",
+          color: "white",
+        }}
+      >
+        To Do List
+      </h1>
 
       <form>
         <input

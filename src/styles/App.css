@@ -9,12 +9,6 @@ body {
     background-color: violet;
 }
 
-.form-container h1 {
-    padding-top: 5%;
-    margin-bottom: 5%;
-    color: white;
-}
-
 .form-container input {
     width: 250px;
     height: 25px;

@@ -9,18 +9,6 @@ body {
     background-color: violet;
 }
 
-.App {
-    display: block;
-    margin: auto;
-    margin-top: 5%;
-    max-width: 400px;
-    height: 500px;
-    text-align: center;
-    background-color: slategrey;
-    border-radius: 5px;
-    overflow-y: scroll;
-}
-
 .form-container h1 {
     padding-top: 5%;
     margin-bottom: 5%;

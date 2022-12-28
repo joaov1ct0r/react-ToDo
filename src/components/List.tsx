@@ -21,7 +21,18 @@ export default function List(): JSX.Element {
       >
         {toDos.map((task: ToDo) => {
           return (
-            <li id={task.id} key={task.id}>
+            <li
+              style={{
+                display: "inline-block",
+                textAlign: "left",
+                color: "white",
+                borderBottom: "2px solid rgb(138, 159, 181)",
+                width: "80%",
+                marginBottom: "5%",
+              }}
+              id={task.id}
+              key={task.id}
+            >
               {task.text}{" "}
               <button onClick={() => dispatch(deleteToDo(task))}>
                 Deletar

@@ -15,15 +15,6 @@ body {
     transition: 0.5s;
 }
 
-.list-container li {
-    display: inline-block;
-    text-align: left;
-    color: white;
-    border-bottom: 2px solid rgb(138, 159, 181);
-    width: 80%;
-    margin-bottom: 5%;
-}
-
 .list-container button {
     height: 25px;
     padding: 2px;

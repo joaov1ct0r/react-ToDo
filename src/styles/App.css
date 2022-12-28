@@ -15,11 +15,6 @@ body {
     transition: 0.5s;
 }
 
-.list-container ul {
-    list-style: none;
-    padding-top: 5%;
-}
-
 .list-container li {
     display: inline-block;
     text-align: left;

@@ -13,7 +13,12 @@ export default function List(): JSX.Element {
 
   return (
     <div className="list-container">
-      <ul>
+      <ul
+        style={{
+          listStyle: "none",
+          paddingTop: "5%",
+        }}
+      >
         {toDos.map((task: ToDo) => {
           return (
             <li id={task.id} key={task.id}>

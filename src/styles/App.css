@@ -9,15 +9,6 @@ body {
     background-color: violet;
 }
 
-.form-container input {
-    width: 250px;
-    height: 25px;
-    outline: none;
-    border: none;
-    background-color: rgb(62, 70, 80);
-    color: white;
-}
-
 .form-container button {
     height: 25px;
     padding: 2px;

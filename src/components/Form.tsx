@@ -43,6 +43,14 @@ export default function Form(): JSX.Element {
           placeholder="Nova tarefa"
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           value={Text || ""}
+          style={{
+            width: "250px",
+            height: "25px",
+            outline: "none",
+            border: "none",
+            backgroundColor: "rgb(62, 70, 80)",
+            color: "white",
+          }}
         />
 
         <button onClick={handleClick} type="submit">

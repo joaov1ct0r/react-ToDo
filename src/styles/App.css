@@ -9,15 +9,6 @@ body {
     background-color: violet;
 }
 
-.form-container button {
-    height: 25px;
-    padding: 2px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 .form-container button:hover {
     background-color: rgb(142, 161, 181);
     color: white;

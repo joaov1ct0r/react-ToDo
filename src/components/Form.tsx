@@ -53,7 +53,18 @@ export default function Form(): JSX.Element {
           }}
         />
 
-        <button onClick={handleClick} type="submit">
+        <button
+          onClick={handleClick}
+          type="submit"
+          style={{
+            height: "25px",
+            padding: "2px",
+            backgroundColor: "black",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
           Adicionar
         </button>
       </form>

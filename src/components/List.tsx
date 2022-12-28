@@ -34,7 +34,19 @@ export default function List(): JSX.Element {
               key={task.id}
             >
               {task.text}{" "}
-              <button onClick={() => dispatch(deleteToDo(task))}>
+              <button
+                style={{
+                  height: "25px",
+                  padding: "2px",
+                  float: "right",
+                  marginLeft: "2%",
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+                onClick={() => dispatch(deleteToDo(task))}
+              >
                 Deletar
               </button>{" "}
               <button onClick={() => dispatch(markToDo(task))}>

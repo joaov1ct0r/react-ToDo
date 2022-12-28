@@ -15,17 +15,6 @@ body {
     transition: 0.5s;
 }
 
-.list-container button {
-    height: 25px;
-    padding: 2px;
-    float: right;
-    margin-left: 2%;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 .list-container button:hover {
     background-color: rgb(142, 161, 181);
     color: white;

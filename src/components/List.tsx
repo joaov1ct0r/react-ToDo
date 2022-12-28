@@ -49,7 +49,19 @@ export default function List(): JSX.Element {
               >
                 Deletar
               </button>{" "}
-              <button onClick={() => dispatch(markToDo(task))}>
+              <button
+                style={{
+                  height: "25px",
+                  padding: "2px",
+                  float: "right",
+                  marginLeft: "2%",
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+                onClick={() => dispatch(markToDo(task))}
+              >
                 Finalizar
               </button>
             </li>

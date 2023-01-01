@@ -29,6 +29,7 @@ export default function List(): JSX.Element {
                 borderBottom: "2px solid rgb(138, 159, 181)",
                 width: "80%",
                 marginBottom: "5%",
+                textDecoration: task.done ? "line-through" : "none",
               }}
               id={task.id}
               key={task.id}

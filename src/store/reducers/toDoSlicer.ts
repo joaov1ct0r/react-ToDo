@@ -7,7 +7,7 @@ export const toDoSlice = createSlice({
   reducers: {
     createToDo: {
       reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
-        state.push(action.payload);
+        return state.concat(action.payload);
       },
 
       prepare: (text: string) => {
@@ -19,7 +19,7 @@ export const toDoSlice = createSlice({
 
     deleteToDo: {
       reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
-        state.splice(Number(action.payload.id), 1);
+        return state.filter((toDo: ToDo) => toDo.id !== action.payload.id);
       },
 
       prepare: (task: ToDo) => {
@@ -29,7 +29,7 @@ export const toDoSlice = createSlice({
 
     markToDo: {
       reducer: (state: ToDo[], action: PayloadAction<ToDo>) => {
-        state.map((task: ToDo) => {
+        return state.map((task: ToDo) => {
           if (task.id === action.payload.id) {
             task.done = !task.done;
           }

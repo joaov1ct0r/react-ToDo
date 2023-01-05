@@ -2,7 +2,7 @@
   "name": "react-todo",
   "author": "github.com/joaov1ct0r",
   "version": "1.0.0",
-  "description": "Web App de Lista de Tarefas, feito em JavaScript utilizando a biblioteca ReactJS com TypeScript",
+  "description": "Web App de Lista de Tarefas utilizando Redux, feito em JavaScript utilizando a biblioteca ReactJS com TypeScript",
   "main": "./build/index.jsx",
   "private": true,
   "license": "MIT",

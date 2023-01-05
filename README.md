@@ -6,11 +6,13 @@
 
 <p>App para criar uma lista de tarefas, Inicialmente com 1 input para entrada do nome da tarefa e 1 botão para adicionar a tarefa a lista</p>
 
-<p>Ao inserir o nome da tarefa no input e pressionar o botão de adicionar, a string é armazenada na var ToDos usando setState, e em seguida a var ToDos é armazenada no localStorage como propriedade: 'savedToDos'</p>
+<p>Ao inserir o nome da tarefa no input e pressionar o botão de adicionar, a string é armazenada no state Text usando setState, e em seguida o state Text é enviado como parametro para o dispatch createToDo</p>
 
-<p>Apos, um list item é criado com um botão 'Deletar'</p>
+<p>Apos criado, a tarefa sera renderizada na tela com um botão "Deletar" e "Finalizar"</p>
 
-<p>Ao clicar no botão 'Deletar' uma função comparando o id dos list items é executada, somente os ids que não forem iguais ao do id do list item acionado serão armazenados na variavel filteredItems, que então enviar o novo valor ao ToDos pelo seu metodo setState, assim deletando o item, e salvando o novo valor no localStorage</p>
+<p>Ao clicar no botão "Deletar" um dispatch é acionado filtrando o id dos list items com a tarefa a ser filtrada, somente os ids que não forem iguais ao do id da tarefa acionado serão armazenados mantidos e um novo array sera retornado, assim deletando a tarefa</p>
+
+<p>Ao clicar no botão "Finalizar" um dispatch é acionado realizando map no state e comparando os ids com o id da tarefa a ser finalizada, quando encontrar a tarefa a propriedade "Done" sera alterado para o oposto do seu valor atual, caso a propriedade se torne true uma text-decoration sera adicionada ao texto da tarefa.</p>
 
 <h2>Requisitos</h2>
 
